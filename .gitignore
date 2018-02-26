@@ -1,0 +1,16 @@
+lib-cov
+*.seed
+*.log
+*.csv
+*.dat
+*.out
+*.pid
+*.gz
+*.pyc
+pids
+logs
+results
+
+# eclipse
+.project
+.DS_*
