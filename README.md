@@ -1,99 +1,64 @@
-# Node.js Quick Start Guide
+# Python Quick Start Guide
 
-This guide will walk you through deploying a Node.js application on [UVCloud](uvcloud.ir).
+This guide will walk you through deploying a Python application on [UVCloud](uvcloud.ir).
 
 ## Usage
 
 ```console
-$ git clone https://github.com/uvcloud/example-nodejs-express.git
-$ cd example-nodejs-express
+$ git clone https://github.com/uvcloud/example-python.git
+$ cd example-python
 $ uv create
-Creating Application... done, created bamboo-espresso
+Creating Application... done, created haptic-waggoner
 Git remote uv added
-remote available at ssh://git@uv-builder.run.uvcloud.ir:2222/bamboo-espresso.git
+remote available at ssh://git@uv-builder.uvcloud.ir:2222/haptic-waggoner.git
 $ git push uv master
-Counting objects: 188, done.
-Delta compression using up to 4 threads.
-Compressing objects: 100% (92/92), done.
-Writing objects: 100% (188/188), 33.51 KiB | 0 bytes/s, done.
-Total 188 (delta 103), reused 167 (delta 93)
+Counting objects: 11, done.
+Delta compression using up to 24 threads.
+Compressing objects: 100% (8/8), done.
+Writing objects: 100% (11/11), 3.08 KiB | 0 bytes/s, done.
+Total 11 (delta 1), reused 0 (delta 0)
 Starting build... but first, coffee!
------> Node.js app detected
-
------> Creating runtime environment
-
-       NPM_CONFIG_LOGLEVEL=error
-       NPM_CONFIG_PRODUCTION=true
-       NODE_ENV=production
-       NODE_MODULES_CACHE=true
-
------> Installing binaries
-       engines.node (package.json):  4.5.x
-       engines.npm (package.json):   unspecified (use default)
-
-       Resolving node version 4.5.x via semver.io...
-       Downloading and installing node 4.5.0...
-       Using default npm version: 2.15.9
-
------> Restoring cache
-       Skipping cache restore (new runtime signature)
-
------> Building dependencies
-       Installing node modules (package.json)
-       express@4.14.0 node_modules/express
-       ├── escape-html@1.0.3
-       ├── array-flatten@1.1.1
-       ├── cookie-signature@1.0.6
-       ├── utils-merge@1.0.0
-       ├── merge-descriptors@1.0.1
-       ├── encodeurl@1.0.1
-       ├── methods@1.1.2
-       ├── content-type@1.0.2
-       ├── content-disposition@0.5.1
-       ├── parseurl@1.3.1
-       ├── etag@1.7.0
-       ├── range-parser@1.2.0
-       ├── cookie@0.3.1
-       ├── vary@1.1.0
-       ├── path-to-regexp@0.1.7
-       ├── serve-static@1.11.1
-       ├── fresh@0.3.0
-       ├── depd@1.1.0
-       ├── qs@6.2.0
-       ├── on-finished@2.3.0 (ee-first@1.1.1)
-       ├── debug@2.2.0 (ms@0.7.1)
-       ├── finalhandler@0.5.0 (unpipe@1.0.0, statuses@1.3.0)
-       ├── proxy-addr@1.1.2 (forwarded@0.1.0, ipaddr.js@1.1.1)
-       ├── send@0.14.1 (destroy@1.0.4, ms@0.7.1, statuses@1.3.0, mime@1.3.4, http-errors@1.5.0)
-       ├── accepts@1.3.3 (negotiator@0.6.1, mime-types@2.1.11)
-       └── type-is@1.6.13 (media-typer@0.3.0, mime-types@2.1.11)
-
------> Caching build
-       Clearing previous node cache
-       Saving 2 cacheDirectories (default):
-       - node_modules
-       - bower_components (nothing to cache)
-
------> Build succeeded!
-       └── express@4.14.0
+...
+-----> Restoring cache...
+       No cache file found. If this is the first deploy, it will be created now.
+-----> Python app detected
+-----> Installing python-3.6.1
+-----> Installing pip
+-----> Installing requirements with pip
+       Collecting python-telegram-bot (from -r /tmp/build/requirements.txt (line 1))
+       Downloading python_telegram_bot-9.0.0-py2.py3-none-any.whl (292kB)
+       Collecting certifi (from python-telegram-bot->-r /tmp/build/requirements.txt (line 1))
+       Downloading certifi-2018.1.18-py2.py3-none-any.whl (151kB)
+       Collecting future>=0.16.0 (from python-telegram-bot->-r /tmp/build/requirements.txt (line 1))
+       Downloading future-0.16.0.tar.gz (824kB)
+       Installing collected packages: certifi, future, python-telegram-bot
+       Running setup.py install for future: started
+       Running setup.py install for future: finished with status 'done'
+       Successfully installed certifi-2018.1.18 future-0.16.0 python-telegram-bot-9.0.0
 
 -----> Discovering process types
        Procfile declares types -> web
-       Default process types for Node.js -> web
------> Compiled slug size is 12M
+-----> Checking for changes inside the cache directory...
+       Files inside cache folder changed, uploading new cache...
+       Done: Uploaded cache (57M)
+-----> Compiled slug size is 54M
 Build complete.
 Launching App...
-Done, bamboo-espresso:v2 deployed to UV
+...
+...
+...
+...
+Done, haptic-waggoner:v2 deployed to Workflow
 
-Use 'uv open' to view this application in your browser
+Use 'deis open' to view this application in your browser
 
-To learn more, use 'uv help' or visit https://uvcloud.ir/
+To learn more, use 'deis help' or visit https://deis.com/
 
-To ssh://git@uv-builder.run.uvcloud.ir:2222/bamboo-espresso.git
+To ssh://git@deis-builder.uvapps.io:2222/haptic-waggoner.git
  * [new branch]      master -> master
-$ curl http://bamboo-espresso.uvc.io
+$ curl http://haptic-waggoner.uvapps.io
 Powered by UV
-Release v2 on bamboo-espresso-web-3084677544-b9q78
+Release v2 on haptic-waggoner-web-3084677544-b9q78
 ```
 
 ## Additional Resources
